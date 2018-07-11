@@ -19,3 +19,9 @@ final:
     - mostrar menssagem final ao jogador
         - ganhou ou perdeu
         - despedida
+
+
+regex palavras so com letras - versao 1s
+    - [A-Za-z]
+    - [a-záàâãéèêíïóôõöúçñ]    *
+    - [A-Za-záàâãéèêíïóôõöúçÁÀÂÃÉÈÍÏÓÔÕÖÚÇ]
