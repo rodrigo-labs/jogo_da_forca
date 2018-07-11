@@ -1,0 +1,21 @@
+Jogo da Forca com TDD
+
+- descobrir a palavra secreta
+- antes que seja enforcado
+
+inicio:
+    - mostrar o cabecalho do jogo
+    - carregar a palavra secreta do arquivo ou servidor
+
+durante:
+    - mostrar a forca
+    - mostrar o gabarito/esquema da palavra
+    - mostrar as estatisticas
+        - numero de acertos
+        - numero de erros
+    - mostrar dica de palavra se estiver na ultima jogada
+    
+final:
+    - mostrar menssagem final ao jogador
+        - ganhou ou perdeu
+        - despedida
