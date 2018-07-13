@@ -11,31 +11,37 @@ class TestHangMan(TestCase):
     def test_get_word(self):
         self.assertEqual(self.game.get_word(), "palavra")
 
-    def test_guess_correct(self):
-        self.assertTrue(self.game.guess("a"))
+    def test_is_valide(self):
+        self.assertTrue(self.game.is_valide("a"))
 
-    def test_guess_error(self):
-        self.assertFalse(self.game.guess("z"))
+    def test_is_valide_uppercase(self):
+        self.assertTrue(self.game.is_valide("A"))
 
-    def test_guess_uppercase(self):
-        self.assertTrue(self.game.guess("A"))
-
-    def test_guess_two_letter(self):
+    def test_is_valide_two_letter(self):
         with self.assertRaises(Exception):
-            self.assertFalse(self.game.guess("aa"))
+            self.assertFalse(self.game.is_valide("aa"))
 
-    def test_guess_empty_string(self):
+    def test_is_valide_empty_string(self):
         with self.assertRaises(Exception):
-            self.assertFalse(self.game.guess(""))
+            self.assertFalse(self.game.is_valide(""))
 
-    def test_guess_space(self):
+    def test_is_valide_space(self):
         with self.assertRaises(Exception):    
-            self.assertFalse(self.game.guess(" "))
+            self.assertFalse(self.game.is_valide(" "))
 
-    def test_guess_number(self):
+    def test_is_valide_number(self):
         with self.assertRaises(Exception):
-            self.assertFalse(self.game.guess("5"))
+            self.assertFalse(self.game.is_valide("5"))
 
-    def test_guess_another_character(self):
+    def test_is_valide_another_character(self):
         with self.assertRaises(Exception):
-            self.assertFalse(self.game.guess("+"))
+            self.assertFalse(self.game.is_valide("+"))
+
+    def test_is_valide_with_repeated_character(self):
+        with self.assertRaises(Exception):
+            self.assertTrue(self.game.is_valide("a"))
+            self.assertFalse(self.game.is_valide("a"))
+
+    def test_guess(self):
+        self.game.guess("p")
+        self.assertEqual("p", self.game.guesses[0])
