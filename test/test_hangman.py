@@ -9,7 +9,7 @@ class TestHangMan(TestCase):
         self.game = HangMan()
 
     def test_get_word(self):
-        self.assertEqual(self.game.get_word(), "palavra")
+        self.assertEqual(self.game.get_word(), "casa")
 
     def test_is_valide(self):
         self.assertTrue(self.game.is_valide("a"))
@@ -43,5 +43,7 @@ class TestHangMan(TestCase):
             self.assertFalse(self.game.is_valide("a"))
 
     def test_guess(self):
-        self.game.guess("p")
-        self.assertEqual("p", self.game.guesses[0])
+        self.game.guess("c")
+        self.game.guess("q")
+        self.assertEqual("c", self.game.guessed_letters[0])
+        self.assertEqual("q", self.game.missed_letters[0])

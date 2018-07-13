@@ -6,19 +6,18 @@ class HangMan(object):
 
     def __init__(self):
         self.secret_word = self.get_word()
-        self.guesses = []
-        self.hits = 0
-        self.errors = 0
+        self.guessed_letters = []
+        self.missed_letters = []
 
     def get_word(self):
-        return "palavra"
+        return "casa"
 
     def is_valide(self, letter):
         if not self.match_regex(letter):
             raise ValueError("Este caracter é inválido.")
         elif len(letter) > 1:
             raise ValueError("Mais de um caracter jogado")
-        elif letter in self.guesses:
+        elif (letter in self.guessed_letters) or (letter in self.missed_letters):
             raise ValueError("Este caracter já foi jogado")
         letter = letter.lower()
         return letter
@@ -31,12 +30,13 @@ class HangMan(object):
             letter = self.is_valide(letter)
         except ValueError as ve:
             print("Erro: {}".format(ve.args[0]))
+            return False
         else:
-            self.guesses.append(letter)
-            
-
-        
-        
+            if (letter in self.secret_word):
+                self.guessed_letters.append(letter)
+            else:
+                self.missed_letters.append(letter)
+            return True
 
 
 def main():
