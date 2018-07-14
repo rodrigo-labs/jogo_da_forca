@@ -53,6 +53,9 @@ class HangMan(object):
     def lost_game(self):
         return len(self.missed_letters) == 6
 
+    def end_game(self):
+        return self.won_game() or self.lost_game()
+
 
 def main():
     pass
