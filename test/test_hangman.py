@@ -47,3 +47,11 @@ class TestHangMan(TestCase):
         self.game.guess("q")
         self.assertEqual("c", self.game.guessed_letters[0])
         self.assertEqual("q", self.game.missed_letters[0])
+
+    def test_show_secret_word_no_plays(self):
+        self.assertEqual("_ _ _ _", self.game.show_secret_word())
+
+    def test_show_secret_word_with_one_hit(self):
+        self.game.guess("a")
+        self.game.guess("q")
+        self.assertEqual("_ a _ a", self.game.show_secret_word())

@@ -38,6 +38,15 @@ class HangMan(object):
                 self.missed_letters.append(letter)
             return True
 
+    def show_secret_word(self):
+        pattern = ""
+        for letter in self.secret_word:
+            if letter not in self.guessed_letters:
+                pattern += "_ "
+            else:
+                pattern += "{} ".format(letter)
+        return pattern.strip()
+
 
 def main():
     pass
