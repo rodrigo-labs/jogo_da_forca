@@ -55,3 +55,10 @@ class TestHangMan(TestCase):
         self.game.guess("a")
         self.game.guess("q")
         self.assertEqual("_ a _ a", self.game.show_secret_word())
+
+    def test_won_game(self):
+        self.game.guess("a")
+        self.game.guess("c")
+        self.assertFalse(self.game.won_game())
+        self.game.guess("s")
+        self.assertTrue(self.game.won_game())

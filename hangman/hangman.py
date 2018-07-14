@@ -47,6 +47,11 @@ class HangMan(object):
                 pattern += "{} ".format(letter)
         return pattern.strip()
 
+    def won_game(self):
+        if "_" not in self.show_secret_word():
+            return True
+        return False
+
 
 def main():
     pass
