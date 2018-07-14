@@ -62,3 +62,12 @@ class TestHangMan(TestCase):
         self.assertFalse(self.game.won_game())
         self.game.guess("s")
         self.assertTrue(self.game.won_game())
+
+    def test_lost_game(self):
+        self.game.guess("q")
+        self.game.guess("w")
+        self.game.guess("e")
+        self.game.guess("r")
+        self.game.guess("t")
+        self.game.guess("y")
+        self.assertTrue(self.game.lost_game())

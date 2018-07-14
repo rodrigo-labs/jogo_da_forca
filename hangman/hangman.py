@@ -48,9 +48,10 @@ class HangMan(object):
         return pattern.strip()
 
     def won_game(self):
-        if "_" not in self.show_secret_word():
-            return True
-        return False
+        return "_" not in self.show_secret_word()
+
+    def lost_game(self):
+        return len(self.missed_letters) == 6
 
 
 def main():
