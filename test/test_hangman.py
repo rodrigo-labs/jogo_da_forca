@@ -88,3 +88,6 @@ class TestHangMan(TestCase):
         self.game.guess("t")
         self.game.guess("y")
         self.assertTrue(self.game.end_game())
+
+    def print_status(self):
+        self.game.print_status()
