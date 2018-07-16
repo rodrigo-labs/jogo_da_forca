@@ -16,5 +16,4 @@ O objetivo do jogo é acertar a palavra secreta antes que você seja enforcado.
 
 ### Screenshots
 
-![screen shot 1](link da imagem)
-![screen shot 2](link da imagem)
+![screen shot 1](http://i245.photobucket.com/albums/gg66/guiggo/jogo_da_velha.png)
