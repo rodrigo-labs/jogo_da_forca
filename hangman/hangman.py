@@ -1,6 +1,7 @@
 # Hangman jogo da forca
 import re
 import random
+import os
 
 
 board = ['''
@@ -66,13 +67,16 @@ O   |
 
 class HangMan(object):
 
+    BASE_PATH = os.path.dirname(os.path.abspath(__file__))
+
     def __init__(self):
+        # self.secret_word = self.get_word()
         self.secret_word = self.get_word()
         self.guessed_letters = []
         self.missed_letters = []
 
     def get_word(self):
-        with open("words.txt", "rt") as file:
+        with open(self.BASE_PATH + "/words.txt", "rt") as file:
                 words = file.readlines()
 
         random_number = random.randint(0, len(words) - 1)
@@ -150,6 +154,7 @@ def main():
         else:
             print("\nGame Over! você perdeu!!!")
             print("A palavra secreta era: " + game.secret_word)
+
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,3 @@
+{
+  "test/test_hangman.py::TestHangMan::test_get_word": true
+}

@@ -7,6 +7,7 @@ class TestHangMan(TestCase):
 
     def setUp(self):
         self.game = HangMan()
+        self.game.secret_word = 'casa'
 
     def test_get_word(self):
         self.assertEqual(self.game.get_word(), "casa")
@@ -89,5 +90,5 @@ class TestHangMan(TestCase):
         self.game.guess("y")
         self.assertTrue(self.game.end_game())
 
-    def print_status(self):
+    def teste_print_status(self):
         self.game.print_status()
