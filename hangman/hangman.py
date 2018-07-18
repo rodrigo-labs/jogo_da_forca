@@ -79,8 +79,7 @@ class HangMan(object):
         with open(self.BASE_PATH + "/words.txt", "rt") as file:
                 words = file.readlines()
 
-        random_number = random.randint(0, len(words) - 1)
-        return words[random_number].strip()
+        return random.choice(words).strip()
         
 
     def is_valide(self, letter):
